@@ -10,7 +10,7 @@ script:
 
 after_success:
     - docker build -t mapundir7/multi-client ./client
-    - docker build -t mapundir7/multi-mginx ./nginx
+    - docker build -t mapundir7/multi-nginx ./nginx
     - docker build -t mapundir7/multi-server ./server
     - docker build -t mapundir7/multi-worker ./worker
     # Log in to the docker CLI
