@@ -19,11 +19,11 @@ services:
           - '3050:80'
     api:
         build:
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
             context: ./server
-        volumes: 
-            - /app/node_modules
-            - ./server:/app
+        # volumes: 
+        #     - /app/node_modules
+        #     - ./server:/app
         depends_on:
           - postgres
         environment: 
@@ -36,18 +36,18 @@ services:
             - PGPORT=5432
     client:
         build:
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
             context: ./client
-        volumes:
-            - /app/node_modules
-            - ./client:/app
+        # volumes:
+        #     - /app/node_modules
+        #     - ./client:/app
     worker:
         build:
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
             context: ./worker
-        volumes:
-            - /app/node_modules
-            - ./worker:/app
+        # volumes:
+        #     - /app/node_modules
+        #     - ./worker:/app
         environment:
             - REDIS_HOST=redis
             - REDIS_PORT=6379
