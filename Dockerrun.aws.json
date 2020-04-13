@@ -6,7 +6,8 @@
             "name": "client",
             "image": "mapundir7/multi-client",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 128
 
         },
         {
@@ -14,7 +15,9 @@
             "name": "server",
             "image": "mapundir7/multi-server",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
+
 
         },
         {
@@ -22,7 +25,10 @@
             "name": "worker",
             "image": "mapundir7/multi-worker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
+            "memory": 128
+
+
 
         },
         {
@@ -36,7 +42,9 @@
                     "containerPort": 80
                 }
             ],
-            "links": ["client", "server"]
+            "links": ["client", "server"],
+            "memory": 128
+
 
         }
     ]
