@@ -17,8 +17,6 @@
             "hostname": "api",
             "essential": false,
             "memory": 128
-
-
         },
         {
 
@@ -27,9 +25,6 @@
             "hostname": "worker",
             "essential": false,
             "memory": 128
-
-
-
         },
         {
 
@@ -44,8 +39,6 @@
             ],
             "links": ["client", "server"],
             "memory": 128
-
-
         }
     ]
 
