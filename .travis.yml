@@ -20,3 +20,14 @@ after_success:
     - docker push mapundir7/multi-nginx
     - docker push mapundir7/multi-server
     - docker push mapundir7/multi-worker
+deploy:
+    provider: elasticbeanstalk
+    region: us-east-2
+    app: multi-docker
+    env: MultiDocker-env
+    bucket_name: elasticbeanstalk-us-east-2-665899173033
+    bucket_path: docker-multi
+    on:
+      branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
